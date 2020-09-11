@@ -4,8 +4,9 @@
 .header{
     text-align: center;
 }
+
 .header nav{
-    text-align: left;
+    /* text-align: left; */
     background-color: black;
     line-height: 40px;
     font-size: 20px;
@@ -15,8 +16,18 @@ nav a{
     color: white;
     margin-right: 20px;
     padding: 5px;
-
 }
 nav a:hover{
+    background-color: gray;
+    text-decoration: none;
+    color: white;
+}
+nav button{
+    background-color: black;
+    color: white;
+    border: none;
+    margin-left: 430px;
+}
+nav button:hover{
     background-color: gray;
 }
