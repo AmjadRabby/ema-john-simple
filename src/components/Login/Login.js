@@ -88,39 +88,29 @@ function Login() {
 
   return (
     <div style={{textAlign: 'center'}}>
-      <br/>
-      {
-        user.isSignedIn ?  <button onClick={signInOut}>Sign Out</button> :  
-        <button onClick={googleSignIn}>Sign in Google</button>
-      }
-      <br/>
-      <button onClick={fbSignIn}>Sign in Facebook</button>
-     {
-       user.isSignedIn && <div>
-                              <h4>Welcome {user.name}</h4>
-                              <p>Your email: {user.email}</p>
-                              <img src={user.photo} alt=""/>
-                          </div>
-     }
-
-      <h1>Our own Authentication</h1>
-
-      <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id=""/>
-      <label htmlFor="newUser"> New User Sign Up</label>
-      <br/>
-      <form onSubmit={handleSubmit}>
-       {newUser && <input type="text" name="name" onBlur={handleBlur} placeholder="Enter Your Name" required/>}
-        <br/>
-        <input type="email" name="email" onBlur={handleBlur} placeholder="Your Email Address"  required/>
+        <h1>Please Login First</h1>
           <br/>
-        <input type="password" name="password" onBlur={handleBlur} placeholder="Your Password" required/>
-          <br/><br/>
-        <input type="submit" value={newUser ? 'Sign up' : 'Sign in'}/>
-      </form>
-      <p style={{color: "red"}}>{user.error}</p>
-      {
-        user.success && <p style={{color: "green"}}>User {newUser? 'created' : 'Logged In'} successfully</p>
-      }
+        <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id=""/>
+        <label htmlFor="newUser"> New User Sign Up</label>
+        <br/>
+        <form onSubmit={handleSubmit}>
+        {newUser && <input type="text" name="name" onBlur={handleBlur} placeholder="Enter Your Name" required/>}
+          <br/>
+          <input type="email" name="email" onBlur={handleBlur} placeholder="Your Email Address"  required/>
+            <br/>
+          <input type="password" name="password" onBlur={handleBlur} placeholder="Your Password" required/>
+            <br/><br/>
+          <input type="submit" value={newUser ? 'Sign up' : 'Sign in'}/>
+        </form>
+        <p style={{color: "red"}}>{user.error}</p>
+        {
+          user.success && <p style={{color: "green"}}>User {newUser? 'created' : 'Logged In'} successfully</p>
+        }
+        {
+          user.isSignedIn ?  <button onClick={signInOut}>Sign Out</button> :  
+          <button onClick={googleSignIn}>Google</button>
+        }
+        <button onClick={fbSignIn}>Facebook</button>
     </div>
   );
 }
