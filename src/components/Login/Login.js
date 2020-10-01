@@ -99,7 +99,7 @@ function Login() {
           <input type="email" name="email" onBlur={handleBlur} placeholder="Your Email Address"  required/>
             <br/>
           <input type="password" name="password" onBlur={handleBlur} placeholder="Your Password" required/>
-            <br/><br/>
+            <br/>
           <input type="submit" value={newUser ? 'Sign up' : 'Sign in'}/>
         </form>
         <p style={{color: "red"}}>{user.error}</p>
